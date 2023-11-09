@@ -1,0 +1,400 @@
+const apiData = [
+    /*
+      Cursos:
+        WPJ - Pericia Judicial
+        WPAI - Pericia em Avaliação de Imóveis
+        WPCF - Pericia Contábil e Financeira
+        WPT - Pericia Trabalhista
+        WPG - Pericia Grafotécnica
+      */
+    {
+      userId: "01",
+      customerZone: "7cc797ba-9ac",
+      nome: "Stéffano Bucci",
+      estado: "Rio de Janeiro",
+      formacao: "Psicologia",
+      cursoRealizado: WPJ,
+      videoExternalId: "545bf6b4-f8db-4a46-9191-7a7e0ab06051",
+      videoUrl: "https://player-vz-7cc797ba-9ac.tv.pandavideo.com.br/embed/?v=545bf6b4-f8db-4a46-9191-7a7e0ab06051",
+      //"https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Steffano-Bucci_1.mp4",
+  
+      //https://player-vz-{customer_zone}.tv.pandavideo.com.br/embed/?v={video_external_id}
+      //https://player-vz-7cc797ba-9ac.tv.pandavideo.com.br/embed/?v=545bf6b4-f8db-4a46-9191-7a7e0ab06051
+    },
+  
+    {
+      userId: "02",
+      nome: "Maxsuell Azevedo Barboza",
+      estado: "Tocantins",
+      formacao: "Estudante de direito / Funcionário público",
+      cursoRealizado: WPAI,
+      videoUrl:
+        //"https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Maxsuell-Azevedo-Barboza_1.mp4",
+        "https://player-vz-7cc797ba-9ac.tv.pandavideo.com.br/embed/?v=3dc0a651-16a8-482a-8091-966500ab097d",
+    },
+  
+    {
+      userId: "03",
+      nome: "José Paulo Albanez",
+      estado: "São Paulo",
+      formacao: "Contabilista e Economista",
+      cursoRealizado: WPCF,
+      videoUrl:
+        //"https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Jose-Paulo-Albanez_1.mp4",
+        "https://player-vz-7cc797ba-9ac.tv.pandavideo.com.br/embed/?v=3dc0a651-16a8-482a-8091-966500ab097d",
+    },
+  
+    {
+      userId: "04",
+      nome: "Paulo Christian Braga de Carvalho ",
+      estado: "Pará",
+      formacao: "Corretor de imóveis",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Paulo-Christian-Braga-de-Carvalho-.mp4",
+    },
+  
+    {
+      userId: "05",
+      nome: "Ana Paula Santana De Souza",
+      estado: "São Paulo",
+      formacao:
+        "Bombeiro civil / Estudante de investigação forense e pericia criminal.",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Ana-Paula-Santana-De-Souza_1.mp4",
+    },
+  
+    {
+      userId: "06",
+      nome: "Clinio Mayrinck Monteiro de Andrade Neto",
+      estado: "Bahia",
+      formacao: "Engenheiro / Advogado",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Clinio-Mayrinck-Monteiro-De-Andrade-Neto_1.mp4",
+    },
+    {
+      userId: "07",
+      nome: " Emerson Bettega",
+      estado: "Santa Catarina",
+      formacao: "Tecnólogo em Gestão de recursos Humanos",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Emerson-Bettega_1.mp4",
+    },
+  
+    {
+      userId: "08",
+      nome: "Regiane Apolinario Roskowinski",
+      estado: "São Paulo",
+      formacao: "Letras, professora ",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Regiane-Roskowinski_1.mp4",
+    },
+  
+    {
+      userId: "09",
+      nome: "Marco Aurélio Oliveira",
+      estado: "São Paulo",
+      formacao: "Administração",
+      cursoRealizado: WPCF,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Marco-Aurelio-Oliveira_1.mp4",
+    },
+  
+    {
+      userId: "10",
+      nome: "Adriana Milanez Suzigan",
+      estado: "Santa Catarina",
+      formacao: "Professora de Artes, pedagoga",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Adriana-Milanez-Suzigan_1.mp4",
+    },
+  
+    {
+      userId: "11",
+      nome: "Juliana de Oliveira Portuguez da Cunha",
+      estado: "Brasília",
+      formacao: "Medicina Veterinária / Licenciada em Ciências Biológicas",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Juliana-de-Oliveira-Portuguez-da-Cunha_1.mp4",
+    },
+  
+    {
+      userId: "12",
+      nome: "Carla Fátima de Oliveira Chagas ",
+      estado: "Rio de Janeiro",
+      formacao: "Citologia Clínica / Bioinformática / Genética Aplicada",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Carla-Fatima-de-Oliveira-Chagas-.mp4",
+    },
+    {
+      userId: "13",
+      nome: "Lívia de Oliveira Pereira",
+      estado: "Minas Gerais",
+      formacao: "Cirurgiã Dentista",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/LIVIA-DE-OLIVEIRA-PEREIRA-.mp4",
+    },
+  
+    {
+      userId: "14",
+      nome: " Livia Maria Liberali Menon",
+      estado: "São Paulo",
+      formacao: "Cirurgiã Dentista",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Livia-Maria-Liberali-Menon_1.mp4",
+    },
+  
+    {
+      userId: "14",
+      nome: "Lauro Pons Santos ",
+      estado: "Rio Grande do Sul",
+      formacao: "Jornalista",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Lauro-Pons-Santos-.mp4",
+    },
+  
+    {
+      userId: "16",
+      nome: "Evandro Henrique Alves Ribeiro",
+      estado: "Minas Gerais",
+      formacao: "Administração",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Evandro-Henrique-Alves-Ribeiro_1.mp4",
+    },
+  
+    {
+      userId: "17",
+      nome: "Daniela Alves dos Santos Mendes",
+      estado: "Paraná",
+      formacao: "Licenciatura Pedagogia",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Daniela-Alves-Dos-Santos-Mendes_1.mp4",
+    },
+  
+    {
+      userId: "18",
+      nome: "Vanda Frez",
+      estado: "Paraná",
+      formacao: "Teologia",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Vanda-Frez_1.mp4",
+    },
+    {
+      userId: "19",
+      nome: "Vanessa Oliveira Camargo",
+      estado: "Paraná",
+      formacao: "Psicologia",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Vanessa-Oliveira-Camargo_1.mp4",
+    },
+  
+    {
+      userId: "20",
+      nome: "Josiane Lourencetti",
+      estado: "São Paulo",
+      formacao:
+        "Engenharia Ambiental, Pós-graduada em Engenheira de Segurança do Trabalho",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Josiane-Lourencetti_1.mp4",
+    },
+  
+    {
+      userId: "21",
+      nome: "Sabrina Fabiana de Barros Batista",
+      estado: "São Paulo",
+      formacao: "Engenheira Civil",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Sabrina-Fabiana-de-Barros-Batista_1.mp4",
+    },
+  
+    {
+      userId: "22",
+      nome: "Aline de Oliveira Pequeno",
+      estado: "Minas Gerais",
+      formacao: "Psicóloga",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Aline-de-Oliveira-Pequeno_1.mp4",
+    },
+  
+    {
+      userId: "23",
+      nome: "Jumária da Cunha Rocha",
+      estado: "Goiás",
+      formacao: "Tecnica em Transaçõesimobiliária",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Jumaria-da-Cunha-Rocha_1.mp4",
+    },
+  
+    {
+      userId: "24",
+      nome: "Ana Alves Cristino",
+      estado: "São Paulo",
+      formacao: "Bacharel em Direito",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Ana-Alves-Cristino_1.mp4",
+    },
+    {
+      userId: "25",
+      nome: "Deyvid Denner Ribeiro de Carvalho ",
+      estado: "Tocantins",
+      formacao: " Professor, Pedagogo",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Deyvid-Denner-Ribeiro-de-Carvalho-.mp4",
+    },
+  
+    {
+      userId: "26",
+      nome: "Ana Paula Ferreira",
+      estado: "São Paulo",
+      formacao: "Gestão de Recursos Humanos e Psicanálise Clínica",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Ana-Paula-Ferreira_1.mp4",
+    },
+  
+    {
+      userId: "27",
+      nome: "Shirley Patrícia de Oliveira",
+      estado: "Minas Gerais",
+      formacao: "Processos Gerenciais",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Shirley-Patricia-De-Oliveira_1.mp4",
+    },
+  
+    {
+      userId: "28",
+      nome: " Francisco Henrique Rodrigues Tomaz Queiroz",
+      estado: "Ceará",
+      formacao: "Contabilista",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Francisco-Henrique-Rodrigues-Tomaz-Queiroz_1.mp4",
+    },
+  
+    {
+      userId: "29",
+      nome: "André Moreira Mahmoud",
+      estado: "Mato Grosso do Sul",
+      formacao: "Médico endocrinologista",
+      cursoRealizado: PMED,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Andre-Moreira-Mahmoud_1.mp4",
+    },
+  
+    {
+      userId: "30",
+      nome: "Samir Borges da Silva",
+      estado: "São Paulo",
+      formacao: "História",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Samir-Borges-da-Silva_1.mp4",
+    },
+    {
+      userId: "31",
+      nome: "Kleber Ribeiro Melo",
+      estado: "Paraná",
+      formacao: "Cardiologista ",
+      cursoRealizado: PMED,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Kleber-Ribeiro-Melo_1.mp4",
+    },
+  
+    {
+      userId: "32",
+      nome: "Gelaine Baratto",
+      estado: "Paraná",
+      formacao: "Administradora",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Gelaine-Baratto_1.mp4",
+    },
+  
+    {
+      userId: "33",
+      nome: "Mauricio Evani Gonçalves de Souza",
+      estado: "Rio de Janeiro",
+      formacao: "Administração",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Mauricio-Evani-Goncalves-de-Souza_1.mp4",
+    },
+  
+    {
+      userId: "34",
+      nome: "Fernando Manuel de Matos Guilherme ",
+      estado: "Rio de Janeiro",
+      formacao: "Engenheiro Eletrotécnico e Eletrônico",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Fernando-Manuel-de-Matos-Guilherme-.mp4",
+    },
+  
+    {
+      userId: "35",
+      nome: "Alessandra Alves de melo",
+      estado: "São Paulo",
+      formacao: "Investigação perícia criminal FORENSE",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Alessandra-Alves-de-melo_1.mp4",
+    },
+  
+    {
+      userId: "36",
+      nome: "Maria Lúcia Drummond Saturnino Dupin ",
+      estado: "Minas Gerais",
+      formacao: "Farmacêutica",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Maria-Lucia-Drummond-Saturnino-Dupin-.mp4",
+    },
+    {
+      userId: "37",
+      nome: "Ailton Bruno de Moura Gonçalves",
+      estado: "Rio de Janeiro",
+      formacao: "Médico - Cirurgia Geral",
+      cursoRealizado: WPJ,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Ailton-Bruno-de-Moura-Goncalves_1.mp4",
+    },
+  
+    {
+      userId: "38",
+      nome: "Alexandre Felipe de Souza Barata",
+      estado: "Manaus",
+      formacao: "Pedagogia",
+      cursoRealizado: WPG,
+      videoUrl:
+        "https://camistudio.com.br/infomedia/wp-content/uploads/2023/10/Alexandre-Felipe-de-Souza-Barata_1.mp4",
+    },
+    {
+      userId: "39",
+      nome: "",
+      estado: "",
+      formacao: "",
+      cursoRealizado: "",
+      videoUrl: "",
+    },
+  ];
